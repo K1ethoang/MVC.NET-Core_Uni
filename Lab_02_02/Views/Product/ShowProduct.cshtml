@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "ShowProduct";
+}
+
+<h2>Danh Sách Sản Phẩm</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã Sản Phẩm</th>
+            <th>Têm Sản Phẩm</th>
+            <th>Lựa Chọn</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 1; i < 10; i++)
+        {
+            <tr>
+                <td>@i</td>
+                <td>Sản Phẩm Thứ @i</td>
+                <td>
+                    @Html.ActionLink("Chi Tiết", "DetailsProduct",
+                new { productName = "Sản Phẩm Thứ " + @i, productId = @i }) |
+                    @Html.ActionLink("Sửa", "EditProduct", new { productId = @i })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
