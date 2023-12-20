@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BẢNG XẾP HẠNG THÁNG 12</h2>
+
+<ol>
+    <li>
+        @Html.ActionLink("Sao Trời Làm Gió", "Listen", new
+   {
+            MusicName = "SaoTroiLamGio"
+        })
+        <span class="ms-lg-4">
+            @Html.ActionLink("Tải xuống", "Download", new
+       {
+           MusicName = "SaoTroiLamGio"
+       })
+        </span>
+    </li>
+    <li>
+        @Html.ActionLink("Sầu Tím Thiệp Hồng", "Listen", new
+   {
+       MusicName = "SauTimThiepHong"
+   })
+        <span class="ms-lg-4">
+            @Html.ActionLink("Tải xuống", "Download", new
+       {
+           MusicName = "SauTimThiepHong"
+       })
+        </span>
+    </li>
+    <li>
+        @Html.ActionLink("Từng Quen", "Listen", new
+   {
+       MusicName = "TungQuen"
+   })
+        <span class="ms-lg-4">
+            @Html.ActionLink("Tải xuống", "Download", new
+       {
+           MusicName = "TungQuen"
+       })
+        </span>
+    </li>
+    <li>
+        @Html.ActionLink("Nối Lại Tình Xưa", "Listen", new
+   {
+       MusicName = "NoiLaiTinhXua"
+   })
+        <span class="ms-lg-4">
+            @Html.ActionLink("Tải xuống", "Download", new
+       {
+           MusicName = "NoiLaiTinhXua"
+       })
+        </span>
+    </li>
+</ol>
+
+

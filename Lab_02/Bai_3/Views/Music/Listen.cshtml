@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Listen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.MusicName</h2>
+
+<audio controls>
+    <source src="~/Content/music/@{@ViewBag.MusicName}.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
