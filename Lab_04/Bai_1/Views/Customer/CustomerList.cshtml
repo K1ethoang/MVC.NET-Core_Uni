@@ -1,0 +1,39 @@
+﻿@model Lab4_Bai1.Models.Customer
+@{
+    ViewBag.Title = "CustomerList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //lấy danh sách khách hàng và convert data
+    var listcustomer = ViewBag.list as List<Lab4_Bai1.Models.Customer>;
+}
+
+<h2>Danh sách khách hàng</h2>
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th>Mã KH</th>
+            <th>Họ và tên</th>
+            <th>Địa chỉ</th>
+            <th>Email</th>
+            <th>Điện thoại</th>
+            <th>Số dư</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*Hiển thị danh sách khách hàng*@
+        @foreach (var c in listcustomer)
+        {
+            <tr>
+                <td>@c.CustomerId</td>
+                <td>@c.FullName</td>
+                <td>@c.Address</td>
+                <td>@c.Email</td>
+                <td>@c.Phone</td>
+                <td>@c.Balance</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

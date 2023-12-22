@@ -1,0 +1,82 @@
+﻿@model Lab4_Bai2.Models.Customer
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h3>Thêm mới khách hàng</h3>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.Label("Mã khách hàng", new
+            {
+                @class = "control-label col-md-2"
+            })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CustomerId)
+                @Html.ValidationMessageFor(model => model.CustomerId)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Họ và tên", new
+            {
+                @class = "control-label col-md-2"
+            })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FullName)
+                @Html.ValidationMessageFor(model => model.FullName)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Địa chỉ", new
+            {
+                @class = "control-label col-md-2"
+            })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Email", new
+            {
+                @class = "control-label col-md-2"
+            })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Điện thoại", new
+            {
+                @class = "control-label col-md-2"
+            })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Phone)
+                @Html.ValidationMessageFor(model => model.Phone)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Số dư", new
+            {
+                @class = "control-label col-md-2"
+            })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Balance)
+                @Html.ValidationMessageFor(model => model.Balance)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Quay lại", "GetCustomers")
+</div>

@@ -1,0 +1,31 @@
+﻿@model Lab4_Bai2.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Thông tin chi tiết</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Mã khách hàng</dt>
+        <dd>@Html.DisplayFor(model => model.CustomerId)</dd>
+        <dt>Họ và tên</dt>
+        <dd>@Html.DisplayFor(model => model.FullName)</dd>
+        <dt>Địa chỉ</dt>
+        <dd>@Html.DisplayFor(model => model.Address)</dd>
+        <dt>Email</dt>
+        <dd>@Html.DisplayFor(model => model.Email)</dd>
+        <dt>Điện thoại</dt>
+        <dd>@Html.DisplayFor(model => model.Phone)</dd>
+        <dt>Số dư</dt>
+        <dd>@Html.DisplayFor(model => model.Balance)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new
+    {
+        id = Model.CustomerId
+    })|
+    @Html.ActionLink("Quay lại", "GetCustomers")
+</p>
